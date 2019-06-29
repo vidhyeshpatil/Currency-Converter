@@ -1,0 +1,33 @@
+/*
+* Countries Lists Action Types
+*/
+export const COUNTRY_DATA_SUCCESS = "COUNTRY_DATA_SUCCESS";
+
+export const COUNTRY_DATA_FAILURE = "COUNTRY_DATA_FAILURE";
+
+/*
+* Currency List Action Types
+*/
+export const CURRENCY_LIST_SUCCESS = "CURRENCY_LIST_SUCCESS";
+
+export const CURRENCY_LIST_FAILURE = "CURRENCY_LIST_FAILURE";
+
+/*
+* Conversion Rates List Action Types
+*/
+export const CONVERSION_RATES_SUCCESS = "CONVERSION_RATES_SUCCESS";
+
+export const CONVERSION_RATES_FAILURE = "CONVERSION_RATES_FAILURE";
+
+/*
+* Custom Action Types
+*/
+export const FETCH_COUNTRY_LIST = "FETCH_COUNTRY_LIST";
+
+export const SET_BASE_CONVERSIONS = "SET_BASE_CONVERSIONS";
+
+export const UPDATE_BASE_VALUE = "UPDATE_BASE_VALUE";
+
+export const UPDATE_CONVERSION_VALUE = "UPDATE_CONVERSION_VALUE";
+
+export const CALC_CONVERSION_VALUE = "CALC_CONVERSION_VALUE";
