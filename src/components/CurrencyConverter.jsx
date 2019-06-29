@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import {getCountries, getConversionRates, getCurrencies, getCountriesList, setBaseConversions} from "../redux/actions";
 import InputBox from '../common/components/InputBox';
-// import DropDown from '../common/components/DropDown';
 import CountrySearchResult from './CountrySearchResult';
 import Conversions from './Conversions';
 
