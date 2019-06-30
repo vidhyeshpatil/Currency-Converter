@@ -10,10 +10,16 @@ const CountrySearchResult = ({ countryData, onSelectCountry }) => {
 
     return (
         <ul>
-            {countryData.map((elem, index) => (
-                <li key= {index} data-value= {JSON.stringify(elem)} onClick= {onSelectCountry} >{elem.countryName}</li> 
-            ))}
+            {(countryData.length > 0) ? MapCountryResults(countryData, onSelectCountry) : <li>No Results Found</li>}
         </ul>
+    );
+}
+
+const MapCountryResults = (countryData, onSelectCountry) => {
+    return (
+        countryData.map((elem, index) => (
+            <li key= {index} data-value= {JSON.stringify(elem)} onClick= {onSelectCountry}>{elem.countryName}</li>
+        )) 
     );
 }
 

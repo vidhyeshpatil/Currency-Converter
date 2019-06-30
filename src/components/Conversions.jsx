@@ -24,17 +24,19 @@ class Conversions extends React.Component {
 
     render() {
         const { baseValue, baseCurrency, conversionValue, conversionCurrencySelected, currencyList } = this.props;
-
+        
         return (
             <div className= "conversion-parent">
                 <h1>Conversions</h1>
+                <div className= "from-Base-to-Conversion">From Base Currency</div>
                 <div className= "conversion-wrapper">
                     <InputBox inputId= "base-input" inputType= "number" inputVal= {baseValue} onInputChange= {this.onBaseChange} />
                     <div className= "baseCurrency">{baseCurrency}</div>
                 </div>
+                <div className= "from-Base-to-Conversion">To Converted Currency</div>
                 <div className= "conversion-wrapper">
                     <InputBox inputId= "conversion-input" inputType= "number" inputVal= {conversionValue} inputDisabled= {(conversionCurrencySelected) ? "" : "disabled"} onInputChange= {this.onConversionChange} />
-                    <DropDown DDOptions= {currencyList} DDSelectedValue= {conversionCurrencySelected} onDropDownChange= {this.onDropDownChange} />
+                    <DropDown DDOptions= {currencyList} DDSelectedValue= {conversionCurrencySelected} DDPlaceholder= "Select Currency..." onDropDownChange= {this.onDropDownChange} />
                 </div>
             </div>
         );

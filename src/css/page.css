@@ -8,6 +8,7 @@
 
 h1 {
     text-align: center;
+    margin: 15px;
 }
 
 .input-search-parent > input {
@@ -32,6 +33,12 @@ h1 {
     flex-direction: column;
 }
 
+.from-Base-to-Conversion {
+    margin-left: 15px;
+    font-weight: bold;
+    font-style: italic;
+}
+
 .conversion-wrapper {
     display: flex;
     margin: 15px;
@@ -43,8 +50,4 @@ h1 {
 
 .baseCurrency {
     align-self: center;
-}
-
-.dropdown {
-    width: 200px;
 }

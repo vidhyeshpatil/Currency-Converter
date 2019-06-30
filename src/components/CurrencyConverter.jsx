@@ -38,8 +38,8 @@ class CurrencyConverter extends Component {
             <React.Fragment>
                 <div className= "input-search-parent">
                     <h1>CurrencyConverter</h1>
-                    <InputBox inputId= "search" inputType= "text" inputMaxLength= "2" inputVal= {countrySelected} onInputChange= {this.onSearch} />
-                    {countryData && <CountrySearchResult countryData = {countryData} onSelectCountry = {this.onSelectCountry} />} 
+                    <InputBox inputId= "search" inputType= "text" inputMaxLength= "2" inputVal= {countrySelected} inputPlaceHolder= "Enter Country Code" onInputChange= {this.onSearch} />
+                    {countryData && <CountrySearchResult countryData= {countryData} onSelectCountry= {this.onSelectCountry} />} 
                 </div>
                 {showConversions && <Conversions />}
             </React.Fragment>

@@ -23,7 +23,7 @@ const initialState = {
     countrySelected: undefined,
     baseValue: 1000,
     baseCurrency: undefined,
-    conversionValue: undefined,
+    conversionValue: '',
     conversionCurrencySelected: undefined,
     showConversions: false,
 };
@@ -41,7 +41,7 @@ const CountryReducer = function(state = initialState, {type, payload}) {
                 conversionRates: payload,
             };
         case CURRENCY_LIST_SUCCESS:
-            const currencyList = [];
+            let currencyList = [];
 
             Object.keys(payload).forEach((key, index) => {
 
@@ -94,18 +94,20 @@ const CountryReducer = function(state = initialState, {type, payload}) {
                 ...state,
                 baseCurrency,
                 showConversions: true,
-                countryData: undefined,
+                countryData: initialState.countryData,
+                conversionCurrencySelected: initialState.conversionCurrencySelected,
+                conversionValue: initialState.conversionValue,
             };
         case UPDATE_CONVERSION_VALUE:
-            let conversionVal = (payload * state.conversionRates[state.conversionCurrencySelected]).toFixed(state.currencyData[state.conversionCurrencySelected].decimal_digits);
+            const UpdatedConversionValue = (payload * state.conversionRates[state.conversionCurrencySelected]).toFixed(state.currencyData[state.conversionCurrencySelected].decimal_digits);
 
             return {
                 ...state,
                 baseValue: payload,
-                conversionValue: conversionVal,
+                conversionValue: UpdatedConversionValue,
             };
         case UPDATE_BASE_VALUE:
-            let baseValue = (payload * state.conversionRates[state.baseCurrency]).toFixed(state.currencyData[state.baseCurrency].decimal_digits);
+            const baseValue = (payload * state.conversionRates[state.baseCurrency]).toFixed(state.currencyData[state.baseCurrency].decimal_digits);
 
             return {
                 ...state,
@@ -113,7 +115,7 @@ const CountryReducer = function(state = initialState, {type, payload}) {
                 baseValue,
             };
         case CALC_CONVERSION_VALUE:
-            let conversionValue = (state.baseValue * state.conversionRates[payload]).toFixed(state.currencyData[payload].decimal_digits);
+            const conversionValue = (state.baseValue * state.conversionRates[payload]).toFixed(state.currencyData[payload].decimal_digits);
 
             return {
                 ...state,

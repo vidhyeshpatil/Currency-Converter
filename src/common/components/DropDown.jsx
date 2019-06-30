@@ -13,8 +13,10 @@ const DropDown = ({DDClass = "dropdown", DDPlaceholder, DDSelectedValue, DDOptio
 
     return (
         <Select 
-            className = {DDClass}
-            placeholder = {DDPlaceholder}
+            inputProps = {{
+                placeholder: DDPlaceholder,
+                className: DDClass,
+            }}
             value = {DDSelectedValue}
             items = {DDOptions}
             getItemValue= {item => item.label}
@@ -26,6 +28,6 @@ const DropDown = ({DDClass = "dropdown", DDPlaceholder, DDSelectedValue, DDOptio
             onSelect = {onDropDownChange}
         />
     );
-}
+};
 
 export default DropDown;
